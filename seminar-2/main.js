@@ -1,7 +1,6 @@
 /*
  *    TODO:: Implement the edit and delete functionalities
  */
-
 function Person(firstName, lastName, phone) {
   this.firstName = firstName;
   this.lastName = lastName;

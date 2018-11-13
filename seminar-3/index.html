@@ -9,17 +9,33 @@
     <script src="./js/imageEditor.js"></script>
 </head>
 <body>
-    <div>
-        <img id="processedImage" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);height:100%;margin: 0 auto;"/>
-    </div>
-    <div style="position: fixed; top: 10px; left: 50%; transform: translate(-50%);background-color: rgba(255, 255, 255, 0.5);">
-        <input type="file" id="fileBrowser" value="Choose image" accept="image/*" >
-    </div>
-    <div style="position: fixed; top: 10px; left: 10px;background-color: rgba(255, 255, 255, 0.5);">
-        <button class="effect btn btn-primary" data-effect="normal">Normal</button>
-        <button class="effect btn btn-primary" data-effect="grayscale">Grayscale</button>
-        <button class="effect btn btn-primary" data-effect="sepia">Sepia</button>
-        <button class="effect btn btn-primary" data-effect="cyanotype">Cyanotype</button>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-1 offset-md-1">
+                <div class="btn-group-vertical" data-toggle="buttons">
+                    <br/>
+                    <button class="effect btn btn-primary" data-effect="normal">Normal</button>
+                    <button class="effect btn btn-primary" data-effect="grayscale">Grayscale</button>
+                    <button class="effect btn btn-primary" data-effect="sepia">Sepia</button>
+                    <button class="effect btn btn-primary" data-effect="cyanotype">Cyanotype</button>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <br/>
+                <div class="card bg-light mb-3">
+                <div class="card-header">
+                    <div class="col-md-12 offset-md-11">
+                        <label class="btn btn-primary">
+                            Choose file <input type="file" id="fileBrowser" accept="image/*" style="display: none" />
+                        </label>
+                    </div>
+                </div>
+                <div class="card-body" style="text-align: center;">
+                    <img id="processedImage" class="col-md-8" />
+                </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script>
         app.load();

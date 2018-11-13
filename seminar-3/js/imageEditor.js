@@ -65,7 +65,11 @@ app.load = () => {
     const effectPickers = document.getElementsByClassName("effect");
     for (let element of effectPickers) {
       element.addEventListener("click", clickEvent => {
+        for (let element of effectPickers) {
+          element.classList.remove('active');
+        }
         const effect = clickEvent.target.dataset.effect;
+        clickEvent.target.classList.add('active');
         app.setEffect(null);
         app.setEffect(effect);
       });
