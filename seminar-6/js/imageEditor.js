@@ -5,19 +5,18 @@ let app = {
   currentEffect: null
 };
 
-app.grayscale = context => {
+app.applyEffect = (context, offsets) => {
+  const { red, green, blue } = offsets;
   const { naturalWidth, naturalHeight } = app.originalImage;
-  let imageData = context.getImageData(0, 0, naturalWidth, naturalHeight);
+  const imageData = context.getImageData(0, 0, naturalWidth, naturalHeight);
   const data = imageData.data;
 
   for (let i = 0; i < data.length; i += 4) {
-    let brightness = 0.34 * data[i] + 0.5 * data[i + 1] + 0.16 * data[i + 2];
-    // red
-    data[i] = brightness;
-    // green
-    data[i + 1] = brightness;
-    // blue
-    data[i + 2] = brightness;
+    const brightness = 0.3 * data[i] + 0.59 * data[i + 1] + 0.11 * data[i + 2];
+    // Set r g b offsets
+    data[i] = brightness + red;
+    data[i + 1] = brightness + green;
+    data[i + 2] = brightness + blue;
   }
 
   // overwrite original image
@@ -30,16 +29,22 @@ app.drawImage = () => {
   processingCanvas.height = app.originalImage.naturalHeight;
   const context = processingCanvas.getContext("2d");
   context.drawImage(app.originalImage, 0, 0);
-  app[app.currentEffect](context);
-  // switch (app.currentEffect) {
-  //   case "normal":
-  //     break;
-  //   case "grayscale":
-  //     app.grayscale(context);
-  //     break;
-  //   default:
-  //     return;
-  // }
+
+  switch (app.currentEffect) {
+    case "normal":
+      break;
+    case "grayscale":
+      app.applyEffect(context, { red: 0, green: 0, blue: 0 });
+      break;
+    case "sepia":
+      app.applyEffect(context, { red: 100, green: 50, blue: 0 });
+      break;
+    case "cyanotype":
+      app.applyEffect(context, { red: 0, green: 50, blue: 100 });
+      break;
+    default:
+      return;
+  }
   processingCanvas.toBlob(blob => {
     app.processedImage.src = URL.createObjectURL(blob);
   }, "image/png");

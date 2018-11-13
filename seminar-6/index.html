@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Seminar 3</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css" type="text/css">
     <script src="./js/imageEditor.js"></script>
 </head>
 <body>
@@ -12,14 +13,16 @@
         <img id="processedImage" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);height:100%;margin: 0 auto;"/>
     </div>
     <div style="position: fixed; top: 10px; left: 50%; transform: translate(-50%);background-color: rgba(255, 255, 255, 0.5);">
-        <input type="file" id="fileBrowser" value="Choose image" accept="image/*">
+        <input type="file" id="fileBrowser" value="Choose image" accept="image/*" >
     </div>
     <div style="position: fixed; top: 10px; left: 10px;background-color: rgba(255, 255, 255, 0.5);">
-        <button class="effect" data-effect="normal">Normal</button>
-        <button class="effect" data-effect="grayscale">Grayscale</button>
-        <button class="effect" data-effect="sepia">Sepia</button>
+        <button class="effect btn btn-primary" data-effect="normal">Normal</button>
+        <button class="effect btn btn-primary" data-effect="grayscale">Grayscale</button>
+        <button class="effect btn btn-primary" data-effect="sepia">Sepia</button>
+        <button class="effect btn btn-primary" data-effect="cyanotype">Cyanotype</button>
     </div>
     <script>
-        app.load();</script>
+        app.load();
+    </script>
 </body>
 </html>
