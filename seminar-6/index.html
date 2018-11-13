@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Seminar 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./js/imageEditor.js"></script>
+</head>
+<body>
+    <div>
+        <img id="processedImage" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);height:100%;margin: 0 auto;"/>
+    </div>
+    <div style="position: fixed; top: 10px; left: 50%; transform: translate(-50%);background-color: rgba(255, 255, 255, 0.5);">
+        <input type="file" id="fileBrowser" value="Choose image" accept="image/*">
+    </div>
+    <div style="position: fixed; top: 10px; left: 10px;background-color: rgba(255, 255, 255, 0.5);">
+        <button class="effect" data-effect="normal">Normal</button>
+        <button class="effect" data-effect="grayscale">Grayscale</button>
+        <button class="effect" data-effect="sepia">Sepia</button>
+    </div>
+    <script>
+        app.load();</script>
+</body>
+</html>
