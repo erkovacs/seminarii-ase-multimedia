@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Telephone Agenda</title>
+        <!-- Move the addPerson() method to a separte JavaScript file and reference that file in the <head> section of the page -->
+        <script type="text/javascript" src="main.js"></script>
+        <link rel="stylesheet" type="text/css" href="agenda-JavaScript.css">
+    </head>
+    <body>
+        <h1>Telephone Agenda</h1>
+        <table>
+            <caption>
+                Person List
+            </caption>
+            <thead>
+                <tr>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Phone Number</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <tr>
+                    <td>Popescu</td>
+                    <td>Ion</td>
+                    <td>023423222</td>
+                </tr>
+                <tr>
+                    <td>Vasilescu</td>
+                    <td>Maria</td>
+                    <td>073423222</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Number of persons: 2</td>
+                </tr>
+            </tfoot>
+        </table>
+        <form action="#" class="controls">
+            <label for="lastName">Last Name:</label>
+            <input name="lastName" id="lastName">
+            <label for="firstName">First Name:</label>
+            <input name="firstName" id="firstName">
+            <label for="phone">Phone Number:</label>
+            <input name="phone" id="phone">
+            <input type="button" value="Add Person">
+        </form>
+        <script type="text/javascript">
+            "use strict";
+        </script>
+    </body>
+</html>
