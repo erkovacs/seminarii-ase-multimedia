@@ -6,8 +6,8 @@ let app = {
 };
 
 app.grayscale = context => {
-  const { height, width } = app.originalImage;
-  let imageData = context.getImageData(0, 0, height, width);
+  const { naturalWidth, naturalHeight } = app.originalImage;
+  let imageData = context.getImageData(0, 0, naturalWidth, naturalHeight);
   const data = imageData.data;
 
   for (let i = 0; i < data.length; i += 4) {
